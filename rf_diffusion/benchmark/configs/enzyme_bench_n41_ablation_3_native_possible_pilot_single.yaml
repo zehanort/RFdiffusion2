@@ -1,0 +1,89 @@
+defaults:
+  - enzyme_bench_n41
+
+sweep:
+  retries: 2
+  command_args: >
+    --config-name=aa
+    inference.deterministic=True
+    (
+      REPO_ROOT/rf_diffusion/model_weights/RFD_173.pt
+      ++transforms.configs.CenterPostTransform.center_type='all'
+    )
+    diffuser.T=1
+    inference.state_dict_to_load=model_state_dict
+    inference.str_self_cond=False
+    (
+      inference.model_runner=NRBStyleSelfCond
+    )
+    ++idealization_metric_n_steps=50
+    inference.idealize_sidechain_outputs=True
+    ++diffuser.rots.sample_schedule=normed_exp
+    ++diffuser.rots.exp_rate=10
+    contigmap.intersperse='10-100'
+    contigmap.reintersperse=False
+    inference.guidepost_xyz_as_design_bb=[True]
+    inference.contig_as_guidepost=False
+
+    (
+      *mcsa_41_contig_atoms_metrics.json
+      num_per_condition=1
+      (
+        ++sweep_rotamer=inferred
+      )|(
+        ++sweep_rotamer=native
+        contigmap.contig_atoms='{}'
+      )
+    )|(
+      *mcsa_41_invrot_3_13_nativeidx_contig_atoms_metrics.json
+      num_per_condition=1
+      ++sweep_rotamer=sampled
+      contigmap.contig_atoms='{}'
+    )
+    (
+      ++sweep_index=inferred
+      inference.contig_as_guidepost=True
+    )|(
+      ++sweep_index=native
+    )|(
+      ++sweep_index=sampled
+      contigmap.shuffle_and_random_partition=True
+    )
+    POST(
+      (
+        inference.partially_fixed_ligand=''
+        inference.flexible_ligand=False
+      )
+    )
+  num_per_condition: 1
+  num_per_job: 1
+  benchmark_json: null
+  benchmarks: null
+  benchmark_regex: '(M0024_1nzy)(_1)?$'
+  # benchmark_regex: '(M0024_1nzy|M0054_1qfe|M0058_1cju)(_1)?$'
+
+  slurm:
+    p: gpu-bf
+    gres: gpu:1
+
+score:
+  chunk: 200
+  run: chai1
+  chai1:
+    slurm:
+      p: gpu
+      gres: gpu:a4000:1
+
+skip_steps:
+  - tm_align
+  - foldseek
+
+metrics:
+  design_metrics:
+    - backbone
+    - rmsd_to_input
+  sequence_metrics:
+    - chai1_pocket_aligned_ligand
+    - sidechain_symmetry_resolved
+
+outdir: /net/scratch/${oc.env:USER}/se3_diffusion/benchmarks/${now:%Y-%m-%d}_${now:%H-%M-%S}_enzyme_bench_n41_ablation_3_native_possible_pilot_single

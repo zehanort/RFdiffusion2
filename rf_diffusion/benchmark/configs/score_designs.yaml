@@ -1,0 +1,38 @@
+datadir: ${hydra:runtime.cwd}
+trb_dir: ${hydra:runtime.cwd}
+filenames: null
+chunk: 300
+tmp_pre: score.list
+pipeline: False
+run: af2
+
+slurm:
+  J: null
+  p: gpu-bf
+  gres: gpu:1
+  submit: True
+  in_proc: False
+  keep_logs: True
+
+chai1:
+  omit_esm_embeddings: False
+  slurm:
+    J: null
+    p: gpu
+    gres: gpu:a4000:1
+    mem: 32
+    submit: True
+    in_proc: False
+    keep_logs: True
+
+af2_initial_guess:
+  slurm:
+    J: null
+    p: gpu
+    gres: gpu:a4000:1
+    mem: 32
+
+hydra:
+  job_logging:
+    root:
+      level: WARN

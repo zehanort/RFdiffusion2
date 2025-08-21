@@ -1,0 +1,39 @@
+datadir: 'datadir_val'
+chunk: 500
+num_seq_per_target: 8
+use_ligand: True
+cautious: False
+v2: True
+regen_jobs: True
+unsafe_skip_parsing: False
+pack_motif: False
+omit_AA: XC
+# outdir: ${.datadir}
+outdirs: 
+  # - ${..datadir}
+  # - ${.datadir}
+  - ${..datadir}/mpnn/packed
+  - ${..datadir}/ligmpnn/packed
+
+ligand_present_for_all: False
+
+slurm:
+  J: mpnn
+  p: gpu-bf
+  gres: gpu:1
+  submit: True
+  in_proc: False
+  keep_logs: True
+
+preprocessing_slurm:
+  J: mpnn_prepro
+  p: cpu
+  gres: None
+  submit: True
+  in_proc: False
+  keep_logs: True
+
+hydra:
+  job_logging:
+    root:
+      level: WARN

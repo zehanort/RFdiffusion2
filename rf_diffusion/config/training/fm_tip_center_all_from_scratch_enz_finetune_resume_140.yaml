@@ -1,0 +1,14 @@
+defaults:
+  - fm_tip_center_all_from_scratch_enz_finetune
+
+rundir: /net/scratch/ahern/se3_diffusion/training/center_all_from_scratch_enz_finetune_resume_140
+wandb_prefix: 'center_all_from_scratch_enz_finetune_resume_140'
+
+pseudobatch: 144
+
+resume: True
+ckpt_load_path: REPO_ROOT/rf_diffusion/model_weights/RFD_140.pt
+zero_weights: False
+resume_scheduler: True
+wandb_project: "fancy-pants "
+wandb_dir: "/scratch/${oc.env:USER}"

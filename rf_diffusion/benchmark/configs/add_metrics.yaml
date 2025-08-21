@@ -1,0 +1,27 @@
+datadir: ${hydra:runtime.cwd}
+filenames: null
+chunk: 200
+tmp_pre: add_metrics.list
+invalidate_cache: False
+invalidate_cache_older_than: null # Datetime like 2023-05-21
+
+design_metrics:
+  - backbone
+
+sequence_metrics:
+  - default
+
+slurm:
+  J: null
+  p: cpu
+  gres: null
+  submit: True
+  in_proc: False
+  keep_logs: True
+
+subset_metrics: []
+
+hydra:
+  job_logging:
+    root:
+      level: WARN

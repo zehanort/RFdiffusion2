@@ -1,0 +1,87 @@
+# Example config for running ppi examples
+defaults:
+  - base
+
+guidepost_bonds: True
+
+inference:
+  align_motif: False
+  str_self_cond: True
+  state_dict_to_use: model_state_dict
+  deterministic: False
+  ckpt_path: /mnt/net/scratch/bcov/train_test/ppi2024-10-10_20:16:24.033429/rank_0/models/RFD_7.pt  # this model was trained for 200 examples...
+  model_runner: NRBStyleSelfCond
+
+contigmap:
+  has_termini: [True,True] # This may not always be accurate but it doesn't do much and it's better if we don't throw an error by default
+
+diffuser:
+  trans:
+    sample_schedule: linear
+    exp_rate: 1
+  rots:
+    exp_rate: 40 # Contentious value. Woody would say use 10 but 40 gives a 4x AF2 boost so...
+  independently_center_diffuseds: True # Without this there's about a 1A gitter by default
+
+# see config/inference/base.yaml and then search for ppi
+# You'll probably want at least ppi.hotspot_res
+
+# see config/inference/base.yaml and then search for scaffoldguided
+
+
+upstream_inference_transforms: # These transforms don't do anything unless specific flags are set
+  names:
+    - HotspotAntihotspotResInferenceTransform
+    - ExposedTerminusTransform
+    - AutogenerateTargetSSADJTransform
+    - LoadTargetSSADJTransform
+    - RenumberCroppedInput
+    - SSSprinkleTransform
+    - ADJSprinkleTransform
+  configs:
+    HotspotAntihotspotResInferenceTransform: {}
+    ExposedTerminusTransform: {}
+    AutogenerateTargetSSADJTransform: {}
+    LoadTargetSSADJTransform: {}
+    RenumberCroppedInput:
+      enabled: True
+    SSSprinkleTransform:
+      active: False
+      background: MASK
+      helix_chunk_size: 3
+      strand_chunk_size: 3
+      loop_chunk_size: 3
+      mask_chunk_size: 3
+      min_helix: 0
+      max_helix: 0
+      min_strand: 0
+      max_strand: 0
+      min_loop: 0
+      max_loop: 0
+      min_mask: 0
+      max_mask: 0
+      spread_efficiency: 0.7
+      chain0_only: True
+    ADJSprinkleTransform:
+      active: False
+      use_existing_ss: False
+      use_existing_mode: 'full'
+      use_existing_chunk_size: 4
+      use_existing_loop_is_mask: True
+      from_scratch_chunk_size: 4
+      from_scratch_off_diag_min: 8
+      from_scratch_off_diag_max: 12
+      from_scratch_coverage: 0.5
+      from_scratch_spread_efficiency: 0.7
+      chain0_only: True
+
+
+transforms:
+  configs:
+    CenterPostTransform:
+      jitter: 0
+      center_type: target_hotspot
+    RejectOutOfMemoryHazards:
+      max_size: 100000
+
+

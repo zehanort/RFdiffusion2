@@ -1,0 +1,21 @@
+defaults:
+  - aa
+
+guidepost_bonds: True
+
+inference:
+  model_runner: NRBStyleSelfCond
+  design_startnum: -1
+  num_designs: 1
+  output_prefix: debug/guide_posts
+  input_pdb: /home/dtischer/code/rf_se3_diffusion/rf_diffusion/benchmark/input/gaa.pdb
+
+thing:
+  good
+
+contigmap:
+  contigs: ['88,A62-68,A88-92']
+  length: null
+
+logging:
+  inputs: False

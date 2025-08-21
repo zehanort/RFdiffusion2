@@ -1,0 +1,1 @@
+version_key = 'embedded_ligand_mpnn'

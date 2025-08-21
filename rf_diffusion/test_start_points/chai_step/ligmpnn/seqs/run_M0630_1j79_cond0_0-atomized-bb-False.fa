@@ -1,0 +1,4 @@
+>run_M0630_1j79_cond0_0-atomized-bb-False, T=0.1, seed=22073, num_res=9, num_ligand_res=8, use_ligand_context=True, batch_size=1, number_of_batches=1, model_path=/home/woody/projects/os_rfd2/os_1/rf_diffusion/third_party_model_weights/ligand_mpnn/s25_r010_t300_p.pt
+AADAAAAAAA
+>run_M0630_1j79_cond0_0-atomized-bb-False, id=0, T=0.1, seed=22073, overall_confidence=0.1562, ligand_confidence=0.1677, seq_rec=0.2222
+LKDGGHAARL

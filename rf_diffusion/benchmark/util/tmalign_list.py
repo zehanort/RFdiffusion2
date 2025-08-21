@@ -1,0 +1,70 @@
+import os
+import argparse
+import subprocess
+import re
+import shutil
+import datetime
+import string
+import random
+import numpy as np
+
+p = argparse.ArgumentParser()
+p.add_argument('list', help='List of pairs of PDBs')
+p.add_argument('--cautious', action='store_true', default=False, help='If the expected output already exists, do no recreate it')
+args = p.parse_args()
+args.out = args.list+'.out'
+
+assert not (args.cautious and os.path.exists(args.out))
+
+with open(args.list) as f:
+    pairs = [l.strip().split() for l in f.readlines()]
+
+# copy files into memory, to avoid excessive disk reading
+filenames = np.unique([fn for fnlist in pairs for fn in fnlist])
+
+datestr = str(datetime.datetime.now()).replace(':','').replace(' ','_') # YYYY-MM-DD_HHMMSS.xxxxxx
+randstr = ''.join(random.choice(string.ascii_lowercase) for i in range(10)) # 10-letter random string
+tmp_dir = '/dev/shm/tmalign_'+datestr+'_'+randstr+'/'
+
+os.makedirs(tmp_dir)
+for fn in filenames:
+    print(f'cp {fn} {tmp_dir+os.path.basename(fn)}')
+    with open(fn, 'rb') as f:
+        1+1
+        # with open(tmp_dir+os.path.basename(fn), 'wb') as outf:
+        #     outf.write(f.read())
+    shutil.copy(fn, tmp_dir+os.path.basename(fn))
+
+fn_map = dict(zip(filenames, [tmp_dir+os.path.basename(fn) for fn in filenames]))
+
+# perform all pairwise TM aligns
+try: 
+    with open(args.out,'w') as outfile:
+        for fn1,fn2 in pairs:
+            fn1 = fn_map[fn1]
+            fn2 = fn_map[fn2]
+
+            cmd = f'/home/aivan/prog/TMalign {fn1} {fn2} -a'
+            proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            out,err = proc.communicate()
+            if err:
+                raise Exception(f'{cmd=} resulted in err: {err}')
+            stdout = out.decode('ascii')
+            m = re.search('TM\-score\= ((0|1)\.\d+).*average',stdout)
+            if not m:
+                raise Exception(f'{stdout=} did not match TM-align regex')
+            score = float(m.groups()[0])
+
+            output = '%s %s %f' % (os.path.basename(fn1).replace('.pdb',''), \
+                                os.path.basename(fn2).replace('.pdb',''), \
+                                score)
+            print(output)
+            print(output, file=outfile)
+    shutil.rmtree(tmp_dir)
+
+except Exception as e:
+    # upon any error above, remove copied files from /dev/shm/
+    if os.path.exists(tmp_dir):
+        shutil.rmtree(tmp_dir)
+    raise e
+

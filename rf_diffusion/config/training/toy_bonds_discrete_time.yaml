@@ -1,0 +1,7 @@
+defaults:
+  - RFD_36_experiments
+
+diffuser:
+  time_type: discrete
+
+ckpt_load_path: /net/scratch/dtischer/231010_all_atom/ops/RFD_36.pt

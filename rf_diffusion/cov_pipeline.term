@@ -1,0 +1,381 @@
+INFO:    squashfs image was compressed with lz4, if it failed to run, please contact image's author
+INFO:    squashfs image was compressed with lz4, if it failed to run, please contact image's author
+INFO:    underlay of /usr/bin/nvidia-smi required more than 50 (56) bind mounts
+INFO:    underlay of /usr/bin/nvidia-smi required more than 50 (856) bind mounts
+################## Start shebang info ##################
+The file /home/jyim/Projects/rf_diffusion/rf_diffusion/exec/rf_diffusion_aa_shebang.sh is being run as a shebang executable. It will...
+    1. Add the rf_diffusion repo directory to your PYTHONPATH.
+    2. Run your python script from the right container, which contains all dependencies.
+    3. Launch the container with slurm and nvidia gpu support.
+The repo dir (/home/jyim/Projects/rf_diffusion) is already in the PYTHONPATH. PYTHONPATH will remain as :/home/jyim/Projects/rf_diffusion:/home/jyim/Projects/rf_diffusion:/home/jyim/Projects/rf_diffusion
+Already running inside container bakerlab_rf_diffusion_aa.sif. Executing /home/jyim/Projects/rf_diffusion/rf_diffusion/benchmark/pipeline.py with /usr/bin/python in the existing container.
+################## End shebang info ####################
+
+/usr/lib/python3.11/site-packages/hydra/_internal/defaults_list.py:251: UserWarning: In 'enzyme_bench_n41_e2e_test': Defaults list is missing `_self_`. See https://hydra.cc/docs/1.2/upgrades/1.0_to_1.1/default_composition_order for more information
+  warnings.warn(msg, UserWarning)
+ic| pipeline.py:50 in main()
+    conf.outdir: '/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai'
+ic| slurm_tools.py:51 in array_submit()- job_count: 1
+################## Start shebang info ##################
+The file /home/jyim/Projects/rf_diffusion/rf_diffusion/exec/rf_diffusion_aa_shebang.sh is being run as a shebang executable. It will...
+    1. Add the rf_diffusion repo directory to your PYTHONPATH.
+    2. Run your python script from the right container, which contains all dependencies.
+    3. Launch the container with slurm and nvidia gpu support.
+The repo dir (/home/jyim/Projects/rf_diffusion) is already in the PYTHONPATH. PYTHONPATH will remain as :/home/jyim/Projects/rf_diffusion:/home/jyim/Projects/rf_diffusion:/home/jyim/Projects/rf_diffusion
+Already running inside container bakerlab_rf_diffusion_aa.sif. Executing /home/jyim/Projects/rf_diffusion/rf_diffusion/run_inference.py with /usr/bin/python in the existing container.
+################## End shebang info ####################
+
+Translating obsolete key: extra_t1d_params -> ['extra_tXd_params']
+Translating obsolete key: extra_t1d -> ['extra_tXd']
+[2025-08-14 06:51:22,822][__main__][INFO] - Making design /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/run_M0024_1nzy_cond0_0
+making design 0 of 0:1
+WARNING! Atoms may not have masked seq! See assert_valid_seq_mask()
+[2025-08-14 06:51:23,362][se3_flow_matching.data.so3_utils][INFO] - Data loaded from .cache/cache_igso3_s0.100-1.500-1000_l1000_o1000-3.npz
+[2025-08-14 06:51:23,556][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(30)
+[2025-08-14 06:51:30,205][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(29)
+[2025-08-14 06:51:34,542][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(28)
+[2025-08-14 06:51:38,845][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(27)
+[2025-08-14 06:51:43,135][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(26)
+[2025-08-14 06:51:47,454][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(25)
+[2025-08-14 06:51:51,761][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(24)
+[2025-08-14 06:51:56,089][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(23)
+[2025-08-14 06:52:00,373][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(22)
+[2025-08-14 06:52:04,703][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(21)
+[2025-08-14 06:52:09,055][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(20)
+[2025-08-14 06:52:13,400][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(19)
+[2025-08-14 06:52:17,766][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(18)
+[2025-08-14 06:52:22,141][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(17)
+[2025-08-14 06:52:26,530][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(16)
+[2025-08-14 06:52:30,914][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(15)
+[2025-08-14 06:52:35,328][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(14)
+[2025-08-14 06:52:39,725][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(13)
+[2025-08-14 06:52:44,133][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(12)
+[2025-08-14 06:52:48,508][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(11)
+[2025-08-14 06:52:52,939][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(10)
+[2025-08-14 06:52:57,346][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(9)
+[2025-08-14 06:53:01,750][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(8)
+[2025-08-14 06:53:06,165][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(7)
+[2025-08-14 06:53:10,594][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(6)
+[2025-08-14 06:53:15,038][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(5)
+[2025-08-14 06:53:19,469][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(4)
+[2025-08-14 06:53:23,863][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(3)
+[2025-08-14 06:53:28,283][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(2)
+[2025-08-14 06:53:32,710][rf_diffusion.inference.model_runners][INFO] - Denoising t=tensor(1)
+[2025-08-14 06:53:47,268][__main__][INFO] - Finished design in 2.41 minutes
+out_prefix_suffixed='/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/run_M0024_1nzy_cond0_0-atomized-bb-False', conf.inference.guidepost_xyz_as_design_bb=False
+[2025-08-14 06:53:47,521][__main__][INFO] - Idealizing atomized sidechains for pX0 of the last step...
+[2025-08-14 06:54:06,614][__main__][INFO] - design : /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/run_M0024_1nzy_cond0_0-atomized-bb-False.pdb
+[2025-08-14 06:54:06,615][__main__][INFO] - Xt traj: /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/traj/run_M0024_1nzy_cond0_0-atomized-bb-False_Xt-1_traj.pdb
+[2025-08-14 06:54:06,615][__main__][INFO] - X0 traj: /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/traj/run_M0024_1nzy_cond0_0-atomized-bb-False_pX0_traj.pdb
+Running step: sweep
+This is benchmarks json
+mcsa_41.json
+array_submit: in_proc: True
+running job after: /home/jyim/Projects/rf_diffusion/rf_diffusion/run_inference.py --config-name=aa inference.deterministic=True inference.ckpt_path=/net/scratch/ahern/se3_diffusion/training/center_all_from_scratch_enz_finetune_stage_2a/center_all_from_scratch_enz_finetune_stage_2a2024-07-03_02:34:09.651142/rank_0/models/RFD_140.pt inference.write_trajectory=True diffuser.T=30 inference.output_prefix=/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/run_M0024_1nzy_cond0 inference.input_pdb=/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/input/M0024_1nzy.pdb inference.ligand=\'BCA\' contigmap.contigs=[\'49,A64-64,21,A86-86,3,A90-90,23,A114-114,22,A137-137,7,A145-145,49\'] contigmap.contig_atoms="'{\'A64\':\'O,C\',\'A86\':\'CB,CA,N,C\',\'A90\':\'CE1,ND1,NE2,CG,CD2\',\'A114\':\'N,CA\',\'A137\':\'NE1,CD1,CE2,CG,CD2,CZ2\',\'A145\':\'OD2,CG,CB,OD1\'}'" contigmap.length=180-180 ++inference.partially_fixed_ligand="{BCA:[C6B,C5B,C7B,C4B,O2B,C2B,C3B,C1B,S1P,O1B,C2P,C3P,N4P,C5P,C6P,O5P,C7P,N8P,C9P,CAP,O9P,CBP,OAP,CCP,CDP,CEP,O6A,P2A]}" ++inference.write_trajectory=True ++inference.write_trb_indep=True ++inference.write_trb_trajectory=True inference.num_designs=1 inference.design_startnum=0 
+
+Submitted array job -1 with 1.0 jobs to make 1 designs for 1 conditions
+Attempt 0/1: Waiting for design jobs to finish... []
+Running step: foldseek
+Running step: graft
+Running step: tm_align
+Running step: mpnn
+mpnn_designs_v2.main: 1 backbones received for sequence fitting
+mpnn_designs_v2.memoize_to_disk: cache miss
+Categorizing 1 PDBs by presence/absence of ligand
+  0%|          | 0/1 [00:00<?, ?it/s]/usr/lib/python3.11/site-packages/torch/storage.py:414: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  return torch.load(io.BytesIO(b))
+100%|██████████| 1/1 [00:00<00:00, 50.75it/s]
+ic| mpnn_designs_v2.py:125 in run_mpnn()
+    conf.cautious: False
+    conf.chunk: 500
+ic| slurm_tools.py:51 in array_submit()- job_count: 1
+################## Start shebang info ##################
+The file /home/jyim/Projects/rf_diffusion/rf_diffusion/exec/rf_diffusion_aa_shebang.sh is being run as a shebang executable. It will...
+    1. Add the rf_diffusion repo directory to your PYTHONPATH.
+    2. Run your python script from the right container, which contains all dependencies.
+    3. Launch the container with slurm and nvidia gpu support.
+The repo dir (/home/jyim/Projects/rf_diffusion) is already in the PYTHONPATH. PYTHONPATH will remain as :/home/jyim/Projects/rf_diffusion:/home/jyim/Projects/rf_diffusion:/home/jyim/Projects/rf_diffusion
+Already running inside container bakerlab_rf_diffusion_aa.sif. Executing /home/jyim/Projects/rf_diffusion/rf_diffusion/benchmark/util/parse_multiple_chains_v2.py with /usr/bin/python in the existing container.
+################## End shebang info ####################
+
+ic| slurm_tools.py:51 in array_submit()- job_count: 1
+Designing this PDB: /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/run_M0024_1nzy_cond0_0-atomized-bb-False.pdb
+These residues will be redesigned:  ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10', 'A11', 'A12', 'A13', 'A14', 'A15', 'A16', 'A17', 'A18', 'A19', 'A20', 'A21', 'A22', 'A23', 'A24', 'A25', 'A26', 'A27', 'A28', 'A29', 'A30', 'A31', 'A32', 'A33', 'A34', 'A35', 'A36', 'A37', 'A38', 'A39', 'A40', 'A41', 'A42', 'A43', 'A44', 'A45', 'A46', 'A47', 'A48', 'A49', 'A51', 'A52', 'A53', 'A54', 'A55', 'A56', 'A57', 'A58', 'A59', 'A60', 'A61', 'A62', 'A63', 'A64', 'A65', 'A66', 'A67', 'A68', 'A69', 'A70', 'A71', 'A73', 'A74', 'A75', 'A77', 'A78', 'A79', 'A80', 'A81', 'A82', 'A83', 'A84', 'A85', 'A86', 'A87', 'A88', 'A89', 'A90', 'A91', 'A92', 'A93', 'A94', 'A95', 'A96', 'A97', 'A98', 'A99', 'A101', 'A102', 'A103', 'A104', 'A105', 'A106', 'A107', 'A108', 'A109', 'A110', 'A111', 'A112', 'A113', 'A114', 'A115', 'A116', 'A117', 'A118', 'A119', 'A120', 'A121', 'A122', 'A124', 'A125', 'A126', 'A127', 'A128', 'A129', 'A130', 'A132', 'A133', 'A134', 'A135', 'A136', 'A137', 'A138', 'A139', 'A140', 'A141', 'A142', 'A143', 'A144', 'A145', 'A146', 'A147', 'A148', 'A149', 'A150', 'A151', 'A152', 'A153', 'A154', 'A155', 'A156', 'A157', 'A158', 'A159', 'A160', 'A161', 'A162', 'A163', 'A164', 'A165', 'A166', 'A167', 'A168', 'A169', 'A170', 'A171', 'A172', 'A173', 'A174', 'A175', 'A176', 'A177', 'A178', 'A179', 'A180']
+These residues will be fixed:  ['A50', 'A72', 'A76', 'A100', 'A123', 'A131']
+ic| pipeline.py:108 in main()- conf.mpnn.v2: True
+ic| pipeline.py:134 in main()
+    d: '/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn'
+    conf.score.datadir: '/home/jyim/Projects/rf_diffusion/rf_diffusion'
+ic| slurm_tools.py:51 in array_submit()- job_count: 1
+Output directory: /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out
+Processing PDB filenames listed in /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/score.list.chai1.0
+Processing PDB file: /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/run_M0024_1nzy_cond0_0-atomized-bb-False_0_1.pdb
+FASTA file created at: /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/fastas/run_M0024_1nzy_cond0_0-atomized-bb-False_0_1.fasta
+Writing FASTA:
+>protein|protein-1
+MTLHIIGHSAGDDVALANEARAQLEAAAAAAGRAVEIAVGRSSAQLGGRFIPAADAALTALAAEKEGVSTPAAGRHSAHYEESAAIALEESRRTRRQSAGSGLIRAMKRAKERGEPVRLFLQWSAEAGGADLERFLAQMERLGIKVLDLRFFSLPLDPAAAHAQSRANVAEIAAALLAAG
+>protein|protein-2
+(BCA)
+Running inference on /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/fastas/run_M0024_1nzy_cond0_0-atomized-bb-False_0_1.fasta
+Writing output to /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_0.pdb
+Writing output to /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_1.pdb
+Writing output to /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_2.pdb
+Writing output to /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_3.pdb
+Writing output to /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_4.pdb
+Inference with seed 42 completed for /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/fastas/run_M0024_1nzy_cond0_0-atomized-bb-False_0_1.fasta. Output files are stored in: [PosixPath('/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_0.pdb'), PosixPath('/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_1.pdb'), PosixPath('/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_2.pdb'), PosixPath('/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_3.pdb'), PosixPath('/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_4.pdb')]
+ic| add_metrics.py:69 in main()
+    cohort: 'design'
+    len(in_filenames): 1
+    metrics: ['backbone', 'rmsd_to_input']
+ic| slurm_tools.py:51 in array_submit()- job_count: 1
+initializing analyze, cmd: <rf_diffusion.dev.pymol.XMLRPCWrapperProxy object at 0x7620d270f110>
+Calculating metrics for: /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/run_M0024_1nzy_cond0_0-atomized-bb-False.pdb
+Outputting computed metrics dataframe with shape (1, 16) to /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/metrics/per_design/backbone/csv.0
+ic| slurm_tools.py:51 in array_submit()- job_count: 1
+initializing analyze, cmd: <rf_diffusion.dev.pymol.XMLRPCWrapperProxy object at 0x7187c6188f90>
+Calculating metrics for: /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/run_M0024_1nzy_cond0_0-atomized-bb-False.pdb
+output_pdb='/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/unidealized/run_M0024_1nzy_cond0_0-atomized-bb-False.pdb'
+Outputting computed metrics dataframe with shape (1, 9) to /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/metrics/per_design/rmsd_to_input/csv.0
+ic| add_metrics.py:69 in main()
+    cohort: 'sequence'
+    len(in_filenames): 1
+    metrics: ['sidechain_symmetry_resolved']
+ic| slurm_tools.py:51 in array_submit()- job_count: 1
+initializing analyze, cmd: <rf_diffusion.dev.pymol.XMLRPCWrapperProxy object at 0x7baa2017c410>
+Calculating metrics for: /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/run_M0024_1nzy_cond0_0-atomized-bb-False_0_1.pdb
+has_chai1: pdb_path='/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_0.pdb'
+parsing name='ref' pdb='/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/input/M0024_1nzy.pdb'
+parsing name='unideal' pdb='/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/unidealized/run_M0024_1nzy_cond0_0-atomized-bb-False.pdb'
+parsing name='des' pdb='/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/run_M0024_1nzy_cond0_0-atomized-bb-False_0_1.pdb'
+parsing name='packed' pdb='/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/run_M0024_1nzy_cond0_0-atomized-bb-False_0_1.pdb'
+parsing name='chai_1' pdb='/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_1.pdb'
+parsing name='chai_0' pdb='/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_0.pdb'
+parsing name='chai_3' pdb='/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_3.pdb'
+parsing name='chai_4' pdb='/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_4.pdb'
+parsing name='chai_2' pdb='/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out/pred.run_M0024_1nzy_cond0_0-atomized-bb-False_0_1_model_idx_2.pdb'
+Outputting computed metrics dataframe with shape (1, 149) to /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/metrics/per_sequence/sidechain_symmetry_resolved/csv.0
+################## Start shebang info ##################
+The file /home/jyim/Projects/rf_diffusion/rf_diffusion/exec/rf_diffusion_aa_shebang.sh is being run as a shebang executable. It will...
+    1. Add the rf_diffusion repo directory to your PYTHONPATH.
+    2. Run your python script from the right container, which contains all dependencies.
+    3. Launch the container with slurm and nvidia gpu support.
+The repo dir (/home/jyim/Projects/rf_diffusion) is already in the PYTHONPATH. PYTHONPATH will remain as :/home/jyim/Projects/rf_diffusion:/home/jyim/Projects/rf_diffusion:/home/jyim/Projects/rf_diffusion
+Already running inside container bakerlab_rf_diffusion_aa.sif. Executing /home/jyim/Projects/rf_diffusion/rf_diffusion/benchmark/compile_metrics.py with /usr/bin/python in the existing container.
+################## End shebang info ####################
+
+finding trbs
+loading run metadata (base metrics)
+loading run metadata (base metrics) from individual trbs, if re-compiling consider passing --cached_trb_df=1 to use the cacheed trb compilation df
+  0%|          | 0/1 [00:00<?, ?it/s]/usr/lib/python3.11/site-packages/torch/storage.py:414: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  return torch.load(io.BytesIO(b))
+100%|██████████| 1/1 [00:02<00:00,  2.85s/it]100%|██████████| 1/1 [00:02<00:00,  2.85s/it]
+writing run metadata (base metrics) to cached csv
+loading computed metrics
+loading mpnn metrics
+loading rosetta ligand scores
+loading mpnn scores
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 396.92it/s]
+/home/jyim/Projects/rf_diffusion/rf_diffusion/benchmark/compile_metrics.py:192: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_ligmpnn['mpnn'] = False
+/home/jyim/Projects/rf_diffusion/rf_diffusion/benchmark/compile_metrics.py:193: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df_ligmpnn['ligmpnn'] = False
+loading backbone metrics
+backbone metrics: loading from {path}
+Using metrics_chunk=1, pared down 0 to 0
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+backbone metrics: merging from {path}
+backbone metrics: loading from {path}
+Using metrics_chunk=1, pared down 0 to 0
+0it [00:00, ?it/s]0it [00:00, ?it/s]
+backbone metrics: merging from {path}
+backbone metrics: loading from {path}
+Using metrics_chunk=1, pared down 1 to 1
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 150.64it/s]
+backbone metrics: merging from {path}
+backbone metrics: loading from {path}
+Using metrics_chunk=1, pared down 1 to 1
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 163.11it/s]
+backbone metrics: merging from {path}
+sequence metrics: loading from /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/metrics/per_sequence/sidechain_symmetry_resolved/csv.*
+Using metrics_chunk=1, pared down 1 to 1
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 82.42it/s]
+sequence metrics: merging from {path}
+Wrote metrics dataframe (1, 638) to "/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/compiled_metrics.csv"
+mpnn_designs_v2.run_mpnn: 1 backbones received for sequence fitting
+Creating 1 jobs to preprocess 1 designs for MPNN
+array_submit: in_proc: True
+running job after: /home/jyim/Projects/rf_diffusion/rf_diffusion/benchmark/util/parse_multiple_chains_v2.py --input_files /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn//parse_multiple_chains.list.0 --datadir /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai --output_parsed /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn//pdbs_0.jsonl --output_fixed_pos /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn//pdbs_position_fixed_0.jsonl
+
+Submitted array job -1 with 1 jobs to preprocess 1 designs for MPNN
+array_submit: in_proc: True
+running job after: /usr/bin/apptainer exec --nv --bind /databases:/databases --bind /net/software/:/net/software/ --bind /projects:/projects /software/containers/mlfold.sif python -u /home/jyim/Projects/rf_diffusion/fused_mpnn/run.py --pdb_path_multi /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/pdbs_position_fixed_0.jsonl --fixed_residues_multi /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/pdbs_position_fixed_0.jsonl --model_type ligand_mpnn --pack_side_chains 1 --out_folder /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/ --temperature="0.1" --batch_size 1 --ligand_mpnn_use_side_chain_context 1 --zero_indexed 1 --packed_suffix "" --omit_AA XC  --repack_everything 0 --force_hetatm 1
+
+Submitted array job -1 with 1 jobs to MPNN 1 designs
+Waiting for MPNN jobs to finish... []
+Running step: thread_mpnn
+Skipping threading since mpnn v2 is used
+Running step: score
+Initiating scoring
+array_submit: in_proc: True
+Checking job='/usr/bin/apptainer run --nv --env HF_HUB_OFFLINE=1 --bind /net/software/lab/chai:/net/software/lab/chai /net/software/lab/chai/chai_apptainer/chai.sif /home/jyim/Projects/rf_diffusion/rf_diffusion/benchmark/../../lib/chai/predict.py --output_dir /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out --pdb_paths_file /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/score.list.chai1.0                  --allow_ccd_pdb_mismatch'
+Pruned job_list_file: /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/jobs.score.chai1.list from 1 to 1 jobs
+running job after: /usr/bin/apptainer run --nv --env HF_HUB_OFFLINE=1 --bind /net/software/lab/chai:/net/software/lab/chai /net/software/lab/chai/chai_apptainer/chai.sif /home/jyim/Projects/rf_diffusion/rf_diffusion/benchmark/../../lib/chai/predict.py --output_dir /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/chai1/out --pdb_paths_file /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/ligmpnn/packed/score.list.chai1.0                  --allow_ccd_pdb_mismatch
+
+Submitted array job -1 with 1 jobs to chai1-predict 1 designs
+Waiting for scoring jobs to finish... []
+Running step: metrics
+array_submit: in_proc: True
+running job after: apptainer exec --env WANDB_MODE=offline -B /net/scratch /net/software/containers/users/ahern/rf_diffusion_prod_sifs/SE3nv-20240912.sif python /home/jyim/Projects/rf_diffusion/rf_diffusion/benchmark/per_sequence_metrics.py --metric backbone --outcsv /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/metrics/per_design/backbone/csv.0 /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/add_metrics.list.metrics_per_design_backbone.0
+
+Submitted array job -1 with 1 jobs to compute per-design metrics for 1 designs
+array_submit: in_proc: True
+running job after: apptainer exec --env WANDB_MODE=offline -B /net/scratch /net/software/containers/users/ahern/rf_diffusion_prod_sifs/SE3nv-20240912.sif python /home/jyim/Projects/rf_diffusion/rf_diffusion/benchmark/per_sequence_metrics.py --metric rmsd_to_input --outcsv /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/metrics/per_design/rmsd_to_input/csv.0 /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/add_metrics.list.metrics_per_design_rmsd_to_input.0
+
+Submitted array job -1 with 1 jobs to compute per-design metrics for 1 designs
+array_submit: in_proc: True
+running job after: apptainer exec --env WANDB_MODE=offline -B /net/scratch /net/software/containers/users/ahern/rf_diffusion_prod_sifs/SE3nv-20240912.sif python /home/jyim/Projects/rf_diffusion/rf_diffusion/benchmark/per_sequence_metrics.py --metric sidechain_symmetry_resolved --outcsv /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/metrics/per_sequence/sidechain_symmetry_resolved/csv.0 /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai/add_metrics.list.metrics_per_sequence_sidechain_symmetry_resolved.0
+
+Submitted array job -1 with 1 jobs to compute per-sequence metrics for 1 designs
+Running step: compile
+Compiling metrics...
+RUNNING: /home/jyim/Projects/rf_diffusion/rf_diffusion/benchmark/compile_metrics.py /home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai --cached_trb_df --metrics_chunk -1
+Done.
+symlinking /home/jyim/Projects/rf_diffusion/lib/ipd/git_pre_commit.sh /home/jyim/Projects/rf_diffusion/.git/hooks/pre-commit
+running job: ./benchmark/pipeline.py --config-name=enzyme_bench_n41_e2e_test  outdir=/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai
+proc=CompletedProcess(args='./benchmark/pipeline.py --config-name=enzyme_bench_n41_e2e_test  outdir=/home/jyim/Projects/rf_diffusion/rf_diffusion/test_outputs/pipeline_chai', returncode=0)
+proc.returncode=0
+.
+
+---------- coverage: platform linux, python 3.11.0-final-0 -----------
+Name                                    Stmts   Miss  Cover   Missing
+---------------------------------------------------------------------
+Attention_module.py                       279    279     0%   1-403
+AuxiliaryPredictor.py                      62     62     0%   1-89
+Embeddings.py                             220    220     0%   1-410
+RoseTTAFoldModel.py                        61     61     0%   1-151
+SE3_network.py                             45     45     0%   1-82
+Track_module.py                           269    269     0%   1-486
+__init__.py                                25      0   100%
+aa_model.py                              1722   1722     0%   1-3079
+apply_masks.py                            189    189     0%   1-529
+arguments.py                              216    216     0%   1-466
+atomization_primitives.py                   9      0   100%
+atomize.py                                134    134     0%   1-297
+benchmark/add_metrics.py                   94     41    56%   21-23, 44, 50, 73-78, 93-100, 113, 118, 135-143, 156-173
+benchmark/chunkify_foldseek_pdb.py         41     30    27%   16-18, 35-70, 74
+benchmark/cluster_pipeline_outputs.py      37     26    30%   29-64, 67
+benchmark/mpnn_designs.py                  83     68    18%   37-52, 55-58, 62-143, 146
+benchmark/mpnn_designs_v2.py              124     18    85%   32-34, 38-39, 74, 92, 127-135, 138, 163, 195, 200, 206
+benchmark/pipeline.py                     157     61    61%   60, 64-78, 82-84, 88-91, 98-101, 113-117, 122-124, 148, 163-173, 184-190, 200-211, 217-222
+benchmark/score_designs.py                207    145    30%   41, 49, 55-77, 82-121, 126-147, 151-176, 208-234, 274, 282, 287, 291-332, 338
+benchmark/sweep_hyperparam.py             272     83    69%   94, 112-141, 145-150, 156-160, 163-183, 186-187, 220, 224-225, 236, 250, 274-276, 287, 316, 334, 339, 341, 344, 350-364, 378, 384, 402
+benchmark/util/slurm_tools.py              55     17    69%   11-38, 53, 67, 70
+blosum62.py                                24     24     0%   2-105
+bond_geometry.py                          108    108     0%   1-196
+build_coords.py                            77     77     0%   1-273
+calc_hbonds.py                            434    434     0%   1-1045
+chemical.py                                45     45     0%   1-93
+conditioning.py                           317    317     0%   1-840
+conditions/__init__.py                      0      0   100%
+conditions/hbond_satisfaction.py          271    271     0%   1-664
+conditions/ideal_ss.py                    396    396     0%   1-951
+conditions/util.py                         30     30     0%   1-107
+conditions/v2.py                           74     74     0%   1-141
+conftest.py                                23      0   100%
+contig_shuffler.py                         85     85     0%   1-133
+contigs.py                                273    273     0%   1-434
+coords6d.py                                45     45     0%   1-80
+data_loader.py                           1223   1223     0%   1-2263
+datahub_dataset_interface.py               44     44     0%   1-94
+diff_util.py                               40     40     0%   1-92
+diffusion_ve.py                            91     91     0%   2-245
+distributions.py                           51     51     0%   1-68
+error.py                                   16     12    25%   6-12, 16-21
+estimate_likelihood.py                    198    198     0%   1-303
+features.py                               277    277     0%   1-587
+guide_posts.py                            331    331     0%   1-718
+idealize.py                                43     43     0%   1-107
+igso3.py                                   45     45     0%   2-165
+import_pyrosetta.py                        16     16     0%   12-43
+inference/__init__.py                       2      2     0%   1-3
+inference/centering.py                     34     34     0%   1-83
+inference/data_loader.py                  105    105     0%   1-282
+inference/model_runners.py                317    317     0%   1-628
+inference/old_symmetry.py                 191    191     0%   2-286
+inference/scaffold.py                     202    202     0%   1-480
+inference/utils.py                        425    425     0%   1-916
+kinematics.py                             159    159     0%   1-320
+loss.py                                   452    452     0%   1-858
+loss_aa.py                                  3      3     0%   1-4
+manual_test_mpnn.py                        33     33     0%   1-59
+mask_generator.py                        1121   1121     0%   1-2011
+master_addr.py                              9      9     0%   1-11
+metrics.py                                224    224     0%   1-488
+model_input_logger.py                      63     63     0%   1-109
+motif/__init__.py                           0      0   100%
+motif/rfd_motif_manager.py                 10     10     0%   1-13
+noisers.py                                112    112     0%   1-203
+nucleic_compatibility_utils.py            914    914     0%   1-1799
+observer/__init__.py                        1      0   100%
+observer/pymol_observer.py                 62     43    31%   28-38, 41-43, 46-48, 52-57, 61-86
+parsers.py                                131    131     0%   1-253
+partials_from_training.py                  86     86     0%   1-120
+perturbations.py                            6      6     0%   1-8
+ppi.py                                    559    559     0%   1-1334
+reshape_weights.py                         64     64     0%   2-105
+restart_training.py                        26     26     0%   1-43
+rotation_conversions.py                   157    157     0%   7-595
+run_inference.py                          394    394     0%   17-729
+sasa.py                                   142    142     0%   1-209
+save_forward_diffusion.py                  54     54     0%   1-63
+scheduler.py                               64     64     0%   1-180
+scoring.py                                 94     94     0%   5-244
+seq_diffusion.py                          260    260     0%   2-818
+show.py                                    52     52     0%   1-72
+show_dataset.py                           119    119     0%   6-246
+silent_files.py                            60     60     0%   1-156
+slurm.py                                   21     21     0%   1-29
+structure.py                              232    232     0%   1-509
+sym/__init__.py                             3      3     0%   1-3
+sym/rfd_highT_sym_manager.py               82     82     0%   1-123
+sym/rfd_sym_manager.py                     65     65     0%   1-103
+sym/sym_indep.py                           50     50     0%   5-93
+test_aa_model.py                          190    190     0%   1-261
+test_apptainer.py                          43     43     0%   1-78
+test_atomize.py                            69     69     0%   1-129
+test_build_coords.py                       52     52     0%   1-94
+test_chai.py                               41     41     0%   7-83
+test_contigs.py                            71     71     0%   1-145
+test_dataset.py                           530    530     0%   1-1177
+test_diffusion.py                           0      0   100%
+test_features.py                          119    119     0%   1-235
+test_geometry.py                          102    102     0%   4-163
+test_guidepost.py                          32     32     0%   1-60
+test_idealize.py                           30     30     0%   1-57
+test_inference.py                         763    763     0%   1-1883
+test_inference_mini.py                    134    134     0%   14-250
+test_inference_open_source.py              87     87     0%   1-180
+test_loss.py                               60     60     0%   2-91
+test_metrics_regression.py                 46     46     0%   1-97
+test_pipeline.py                           64     29    55%   19-156, 159-164, 172-195, 239, 244
+test_pyrosetta.py                         177    177     0%   1-266
+test_seq_diff/__init__.py                   0      0   100%
+test_seq_diff/inference.py                 15     15     0%   1-24
+test_seq_diff/network.py                   23     23     0%   1-45
+test_seq_diff/seq_diff_util.py             17     17     0%   1-23
+test_seq_diff/train.py                     87     87     0%   1-177
+test_train_open_source.py                  90     90     0%   1-135
+test_training_regression.py               172    172     0%   1-249
+test_transform.py                         136    136     0%   1-228
+test_utils.py                             339    339     0%   1-546
+tip_atoms.py                               27     27     0%   1-55
+train_multi_deep.py                       784    784     0%   3-1374
+util.py                                   215    215     0%   1-382
+util_module.py                            175    175     0%   1-308
+viz/__init__.py                             1      1     0%   1
+viz/viz_indep_pymol.py                     57     57     0%   1-119
+write_file.py                             140    140     0%   1-239
+---------------------------------------------------------------------
+TOTAL                                   20926  20229     3%
+
+1 passed, 1 warning in 470.71s (0:07:50)

@@ -1,0 +1,10 @@
+defaults:
+  - rfd_enzyme_bench_n41
+
+sweep:
+  benchmark_json: mcsa_41_invrot_3_13_nativeidx_contig_atoms_metrics.json
+  benchmarks: all
+  num_per_condition: 1
+  num_per_job: 1
+
+outdir: /net/scratch/${oc.env:USER}/se3_diffusion/benchmarks/${now:%Y-%m-%d}_${now:%H-%M-%S}_rfd_mcsa41_invrot_set_2_shuffled

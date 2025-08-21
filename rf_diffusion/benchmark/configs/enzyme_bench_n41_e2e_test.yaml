@@ -1,0 +1,36 @@
+defaults:
+  - enzyme_bench_n41
+  - _self_
+
+in_proc: True
+sweep:
+  command_args: >
+    --config-name=aa
+    inference.deterministic=True
+    inference.ckpt_path=REPO_ROOT/rf_diffusion/model_weights/RFD_140.pt
+    inference.write_trajectory=True
+    contigmap.intersperse='1-10'
+    contigmap.reintersperse=True
+    diffuser.T=2
+    
+    POST(
+      (
+        contigmap.length=10-10
+      )
+    )
+  num_per_condition: 1
+  num_per_job: 1
+  benchmarks: M0630_1j79
+
+mpnn:
+  num_seq_per_target: 1
+  preprocessing_slurm:
+    in_proc: ${in_proc}
+  # # Forces MPNN into determinism by only letting it choose H
+  # omit_AA: ACDEFGIKLMNPQRSTVWYX
+
+metrics:
+  sequence_metrics:
+    - sidechain_symmetry_resolved
+
+outdir: /net/scratch/${oc.env:USER}/se3_diffusion/benchmarks/${now:%Y-%m-%d}_${now:%H-%M-%S}_e2e_test

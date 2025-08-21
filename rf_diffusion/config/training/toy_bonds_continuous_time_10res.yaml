@@ -1,0 +1,21 @@
+defaults:
+  - toy_bonds_continuous_time
+
+metrics:
+  - atom_bonds_permutations
+  - rigid_loss
+  - rigid_loss_input
+  - VarianceNormalizedPredTransMSE
+  - VarianceNormalizedInputTransMSE
+  - displacement_permutations
+
+experiment:
+  diffuse_everything: false
+
+dataloader:
+  max_residues: 10
+  CROP: 50
+
+n_write_pdb: 1
+pseudobatch: 24
+ckpt_load_path: /home/ahern/projects/aa/rf_diffusion/models/RFD_36_cont_time.pt

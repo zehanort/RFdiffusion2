@@ -1,0 +1,33 @@
+# Example config for diffusing with multiple polymer classes
+defaults:
+  - base
+
+inference:
+  ckpt_path: /net/scratch/afavor/RFD_training/fm/multi_polymer/multi_polymer_run_012025-01-31_12:10:24.601452/rank_0/models/RFD_9.pt
+  output_mask_codes:
+    protein: 'ALA'
+    rna:     ' RX' # alternatively: ' RA'
+    dna:     ' DX' # alternatively: ' DA'
+  diffused_mask_codes: ['UNK','MAS',' DX',' RX']
+  px0_source: 'rfo.xyz_allatom'
+
+contigmap:
+  contigs: ['30']
+  has_termini: [True]
+  mol_classes: ['protein']
+
+# upstream_inference_transforms: # These transforms don't do anything unless specific flags are set
+#   names:
+#     - DiffusedMolClassInferenceTransform
+#   configs:
+#     DiffusedMolClassInferenceTransform: {}
+
+# transforms:
+#   configs:
+#     CenterPostTransform:
+#       jitter: 0
+#       center_type: is_diffused
+#       # center_type: is_not_diffused
+#     RejectOutOfMemoryHazards:
+#       max_size: 100000
+#     # DiffusedMolClassTransform: {}

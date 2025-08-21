@@ -1,0 +1,12 @@
+pipeline_outdir: ???
+
+slurm:
+  J: foldseek_clustering
+  submit: True
+  in_proc: False
+  keep_logs: True
+
+hydra:
+  job_logging:
+    root:
+      level: WARN

@@ -1,0 +1,46 @@
+defaults:
+  - pipeline
+
+sweep:
+  command: /usr/bin/apptainer run --nv /software/containers/RF_diffusion.sif -u /home/ahern/projects/clean_rf_diffusion/run_inference.py
+  command_args: >
+    --config-name=base
+    inference.deterministic=True
+    inference.align_motif=True
+    inference.annotate_termini=True
+    inference.model_runner=NRBStyleSelfCond
+    +inference.ckpt_override_path=/home/ahern/projects/rf_diffusion/models/theo_pdb/BFF_4.pt
+    potentials.guide_scale=1
+    potentials.guiding_potentials=[\'type:substrate_contacts,s:1,r_0:8,rep_r_0:5.0,rep_s:2,rep_r_min:1\']
+    contigmap.shuffle=False
+    contigmap.shuffle_and_random_partition=True
+    diffuser.T=100
+  benchmark_json: mcsa_41.grouped.json
+  benchmarks: all
+  num_per_condition: 100
+  num_per_job: 20
+  slurm:
+    p: gpu
+    gres: gpu:rtx2080:1
+
+in_proc: False
+score:
+  chunk: 200
+  run: chai1
+  chai1:
+    slurm:
+      gres: gpu:a6000:1
+
+
+
+outdir: /net/scratch/${oc.env:USER}/se3_diffusion/benchmarks/${now:%Y-%m-%d}_${now:%H-%M-%S}_rfd_mcsa41
+
+metrics:
+  design_metrics:
+    - backbone
+    - rmsd_to_input
+  sequence_metrics:
+    - sidechain_symmetry_resolved
+    - chai1_pocket_aligned_ligand
+
+graft: True
