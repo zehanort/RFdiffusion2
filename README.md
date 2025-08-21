@@ -1,3 +1,6 @@
+> 🚧 **Under Construction:**  
+> This is an initial release of the functionality — further documentation and cleanup is in progress.  Currently only inference is supported. But everything currently documented in this README should be runnable. If you are experiencing a bug with inference, feel free to file an issue and attach the output .pdb, .trb, **and** a picture of the design visualized according to the pymol visualization section of this README.
+
 # RFdiffusion 2
 
 Open source code for RFdiffusion2 as described in the following pre-print.
