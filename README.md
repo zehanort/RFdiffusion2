@@ -22,20 +22,24 @@ Open source code for RFdiffusion2 as described in the following pre-print.
 
 2. **Add the repo to your PYTHONPATH**
 
-   If you installed the repo into `/my/path/to/rfdiffusion`, then run:
+   If you installed the repo into `/my/path/to/RFdiffusion2`, then run:
    ```bash
-   export PYTHONPATH="/my/path/to/rfdiffusion"
+   export PYTHONPATH="/my/path/to/RFdiffusion2"
    ```
 
 3. **Download the model weights and containers:**
    ```bash
+   cd /my/path/to/RFdiffusion2
    python setup.py
    ```
+   These files are quite large so the download process can take over half an hour. If the download process gets terminated before finishing run `python setup.py overwrite` so taht any partially downloaded files can be overwritten. 
 
 4. **Install apptainer**
 
-   RFdiffusion 2 (RFD2) uses [apptainer](https://apptainer.org) to simplify the environment set-up.
-   Please follow the apptainer [installation instructions](https://apptainer.org/docs/admin/main/installation.html) for your operating system.
+   *Note: you can also run RFdiffusion2 with singularity.*
+
+   RFdiffusion2 (RFD2) uses [apptainer](https://apptainer.org) to simplify the environment set-up.
+   If you do not already have apptainer on your system, please follow the apptainer [installation instructions](https://apptainer.org/docs/admin/main/installation.html) for your operating system.
 
    If you manage your packages on linux with `apt` you can simply run:
    ```bash
@@ -78,7 +82,7 @@ The outputs will be written to:
 pipeline_outputs/${now:%Y-%m-%d}_${now:%H-%M-%S}_open_source_demo
 ```
 
-This runs only the design stage of the pipeline.  In order to continue through sequence-fitting with LigandMPNN and folding with Chai1, pass the command line argument: `stop_step=''`.  Note that Chai1 cannot run on all GPU architectures.
+This runs only the design stage of the pipeline.  In order to continue through sequence-fitting with [LigandMPNN](https://github.com/dauparas/LigandMPNN) and folding with [Chai1](https://github.com/chaidiscovery/chai-lab), pass the command line argument: `stop_step=''`.  Note that Chai1 cannot run on all GPU architectures.
 
 Pipeline runs can be resumed by passing `outdir=/path/to/your/output/directory`.
 
@@ -86,14 +90,14 @@ Pipeline runs can be resumed by passing `outdir=/path/to/your/output/directory`.
 ## Viewing Designs
 
 Visualizing the design outputs can be confusing when looking at the raw .pdb files, especially for unindexed motif scaffolding, in which the input motif is incorporated into the protein at indices of the network's choice.  
-To simplify this, we provide scripts for visualizing the outputs of the network that interact with a local pymol instance over XMLRPC.
+To simplify this, we provide scripts for visualizing the outputs of the network that interact with a local PyMOL instance over XMLRPC.
 
-Download [pymol](https://www.pymol.org/) and run it as an XMLRPCServer with:
+Download [PyMOL](https://www.pymol.org/) and run it as an XMLRPCServer with:
 ```bash
-./pymol -R
+pymol -R
 ```
 
-### Pymol and designs on the same machine
+### PyMOL and designs on the same machine
 
 Run:
 ```bash
@@ -112,12 +116,12 @@ You should see something like:
 - The generated backbone will be colored a pastel gradient.
 - Any small molecules will have their carbon atoms colored purple.
 
-### Pymol running locally, designs on remote GPU
+### PyMOL running locally, designs on remote GPU
 
 It is common for users to be sshed into a gpu cluster for running designs.  
-It is still possible to view designs on a remote computer from your local pymol, as long as your remote computer has a route to your local computer (via VPN or ssh proxy).
+It is still possible to view designs on a remote computer from your local PyMOL, as long as your remote computer has a route to your local computer (via VPN or ssh proxy).
 
-Simply find your hostname with:
+Simply find your hostname on your cluster with:
 ```bash
 hostname -I
 192.168.0.113 100.64.128.68
@@ -125,10 +129,11 @@ hostname -I
 
 The second number is the route to your computer.
 
-Simply append `--pymol_url=http://100.64.128.68:9123` to the command, i.e. from your remote machine run:
+Simply append `--pymol_url=http://100.64.128.68:9123` to the command, i.e. from your remote machine (cluster) run:
 ```bash
 apptainer exec rf_diffusion/exec/bakerlab_rf_diffusion_aa.sif rf_diffusion/dev/show_bench.py --clear=True --key=name '/absolute/path/to/pipeline_outputs/output_directory/*.pdb' --pymol_url=http://100.64.128.68:9123
 ```
+Make sure to replace 100.64.128.68 with your computer's route. 9123 is the port that PyMol uses, after running `pymol -R` you should see a message containing this route number. 
 
 ## Additional Info
 
