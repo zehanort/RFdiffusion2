@@ -34,7 +34,7 @@ More detailed information about how to run, install, and use RFdiffusion2 can be
    cd /my/path/to/RFdiffusion2
    python setup.py
    ```
-   These files are quite large so the download process can take over half an hour. If the download process gets terminated before finishing run `python setup.py overwrite` so taht any partially downloaded files can be overwritten. 
+   These files are quite large so the download process can take over half an hour. If the download process gets terminated before finishing run `python setup.py overwrite` so that any partially downloaded files can be overwritten. 
 
 4. **Install apptainer**
 
