@@ -60,3 +60,6 @@ jobs.list*
 *\#
 rf_diffusion/open_source_tests/
 rf_diffusion/test_outputs/
+
+**/*.sif
+**/*.pt
