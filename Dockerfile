@@ -91,11 +91,8 @@ RUN /bin/bash -c "source activate rfd2 && \
 RUN conda install -y -n rfd2 -c dglteam/label/th24_cu124 dgl
 
 COPY . /opt/RFdiffusion2
-WORKDIR /opt/RFdiffusion2
 ENV PYTHONPATH="/opt/RFdiffusion2"
-
-# setup RFdiffusion2
-# RUN /bin/bash -c "source activate rfd2 && python setup.py"
+ENV DGLBACKEND="pytorch"
 
 # Set default environment
 ENV CONDA_DEFAULT_ENV=rfd2
@@ -104,3 +101,13 @@ ENV PATH /opt/conda/envs/rfd2/bin:$PATH
 # Ensure Conda is initialized for any shell
 RUN echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc
 RUN echo "conda activate rfd2" >> ~/.bashrc
+
+WORKDIR /opt/RFdiffusion2/rf_diffusion
+
+# api setup
+RUN /bin/bash -c "source /opt/conda/etc/profile.d/conda.sh && conda activate rfd2 && pip install fastapi[standard]"
+COPY api /api
+
+# Ensure uvicorn is launched from inside the conda environment.
+# Use /bin/bash -lc in CMD to source conda and exec uvicorn.
+CMD ["/bin/bash", "-lc", "source /opt/conda/etc/profile.d/conda.sh && conda activate rfd2 && exec uvicorn api.main:app --host 0.0.0.0 --port 8000"]
