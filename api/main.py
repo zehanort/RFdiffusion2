@@ -1,4 +1,5 @@
 import logging
+import os
 from pathlib import Path
 import subprocess as sp
 import time
@@ -46,14 +47,15 @@ async def generate(
     log_inputs_dir.mkdir(parents=True, exist_ok=True)
 
     # save the uploaded input file
-    input_pdb_content = await pdb_file.read()
-    logged_input_pdb = log_inputs_dir / pdb_file.filename
+    logged_input_pdb = log_inputs_dir / os.path.basename(pdb_file.filename)
     with open(logged_input_pdb, "wb") as f:
-        f.write(input_pdb_content)
+        f.write(pdb_file.file.read())
+        f.flush()
 
     # build the command
-    contigmap = ''.join(contigmap.split())
-    contigmap = f'["{contigmap}"]'
+    if not contigmap.startswith("[") and not contigmap.endswith("]"):
+        contigmap = ''.join(contigmap.split())
+        contigmap = f'["{contigmap}"]'
     rfdiffusion_cmd = [
         "python",
         "run_inference.py",
